@@ -12,7 +12,7 @@ app.post('/users',async(req,res)=>{
     const hashedpassword=await bcrypt.hash(req.body.password,10);
   const user= {username:req.body.username,password:hashedpassword};
   users.push(user);
-  res.status(201).send();
+  res.status(201).send("succesfully registered");
     }catch{
         res.status(500).send();
     }
